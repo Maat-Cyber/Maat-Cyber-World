@@ -1,4 +1,4 @@
-# Maat-Cyber-Word
+# Maat-Cyber-World
 Welcome! 😊😊
 Here there is a collection of useful scripts for CTFs made by me, soon i will also add CTFs write ups 👨‍💻.
 
