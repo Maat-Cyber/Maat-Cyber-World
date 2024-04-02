@@ -1,5 +1,7 @@
+# A base 64 to image converter in python
+# you need to install it with: pip install pybase64
+
 # importing pybase64 module  
-# might need to install it with: pip install pybase64
 import pybase64 
   
 # Get the base64 encoded data  
