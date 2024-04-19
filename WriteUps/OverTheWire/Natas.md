@@ -9,9 +9,9 @@ To access every level you will only need a web browser of your choice, we will o
 
 Once we have modified the link copy and paste it in the URL bar of the browser, since it is using the HTTP protocol a warning might appear telling that the connection is not secure, ignore it and view the website.
 
-Finally to successfully view the page we will need to insert a username and password :
-username : natas0 (change the number to match the level)
-password : this is what we need to find to log in every level
+Finally to successfully view the page we will need to insert a username and password : <br>
+username : natas0 (change the number to match the level) <br>
+password : this is what we need to find to log in every level  <br> 
 
 Remember that there are multiple ways to solve most of the levels, so if one doesn't work for you or you don't like it go with another one, you can also be creative and find a method that suits with your style.
 I will provide, whenever possible, multiple ways to solve the challenges, both a simple one and a more complex but comprehensive other.
@@ -21,10 +21,10 @@ Ok, everything is set, let's begin
 <br/>
 
 ### Level 0
-Access the website with the link : http://natas0.natas.labs.overthewire.org . 
-Insert the credentials :
-username : natas0
-password : natas0
+Access the website with the link : http://natas0.natas.labs.overthewire.org . <br>
+Insert the credentials : <br>
+username : natas0 <br>
+password : natas0 <br>
 
 We see a page with written that we will find the password for the next level in this page.
 If look in the page we can see there is only that sentence and the background, a good way to start to analyze a web-page and discover more info about it is to view its source code.
@@ -37,10 +37,10 @@ Viewing the code we can see there are 2 comments, highlighted in green, and thee
 ---
 
 ### Level 0 -> 1
-Access the website with the link : http://natas1.natas.labs.overthewire.org . 
-Insert the credentials :
-username : natas1
-password : g9D9cREhslqBKtcA2uocGHPfMZVzeFK6
+Access the website with the link : http://natas1.natas.labs.overthewire.org .  <br>
+Insert the credentials : <br>
+username : natas1  <br>
+password : g9D9cREhslqBKtcA2uocGHPfMZVzeFK6  <br>
 
 Once we log-in we can read that this time the right click has been blocked, meaning that probably the password is again in the home page source but we need to find another way to view it.
 
@@ -59,10 +59,10 @@ You will need to use the proxy module to capture the initial request to the page
 ---
 
 ### Level 1 -> 2
-Access the website with the link : http://natas2.natas.labs.overthewire.org . 
-Insert the credentials :
-username : natas1
-password : h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7
+Access the website with the link : http://natas2.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas1  <br>
+password : h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7  <br>
 
 This time we get an hint telling us that there is nothing in this page, anyway we want always to check the page source for extra info.
 
@@ -75,10 +75,10 @@ Here near the image file there is a text file called "users.txt", we can open it
 ---
 
 ### Level 2 -> 3
-Access the website with the link : http://natas3.natas.labs.overthewire.org . 
-Insert the credentials :
-username : natas3
-password : G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q
+Access the website with the link : http://natas3.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas3  <br>
+password : G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q  <br>
 
 Let's view again the page source, but this time we see a comment in the code saying that there are no more information leaks, this means that we have to find a new way to discover the password.
 
@@ -94,10 +94,10 @@ And a new page open with the password for natas4 : tKOcJIbzM4lTs8hbCmzn5Zr4434fG
 ---
 
 ### Level 3 -> 4
-Access the website with the link : http://natas4.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas4
-password : tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm
+Access the website with the link : http://natas4.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas4 <br>
+password : tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm <br>
 
 This time, as we can read when we open the website, in order to view the password we need to appear as if we connected to this site coming from http://natas5.natas.labs.overthewire.org/ .
 
@@ -128,10 +128,10 @@ Remember to vet the extensions before installing them ;).
 ---
 
 ### Level 4 -> 5
-Access the website with the link : http://natas5.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas5
-password : Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD
+Access the website with the link : http://natas5.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas5 <br>
+password : Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD <br>
 
 When the sites open we get the message "Access disallowed. You are not logged in"...
 
@@ -151,10 +151,10 @@ br/>
 ---
 
 ### Level 5 -> 6
-Access the website with the link : http://natas6.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas6
-password : fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR
+Access the website with the link : http://natas6.natas.labs.overthewire.org .  <br>
+Insert the credentials : <br> 
+username : natas6 <br>
+password : fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR <br>
 
 This time we can see there is a box where we have to submit a secret code, there is also an option to check the source code, let's view it.
 
@@ -169,10 +169,10 @@ br/>
 ---
 
 ### Natas 7
-Access the website with the link : http://natas7.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas7
-password : jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr 
+Access the website with the link : http://natas7.natas.labs.overthewire.org .  <br>
+Insert the credentials : <br>
+username : natas7 <br>
+password : jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr  <br>
 
 he home page seems showing nothing much, let's view the page sourve and we can notice a comment wit an hint  that says our password for level 8 is located in /etc/natas_webpass/natas8 .
 
@@ -194,10 +194,10 @@ Knowing this i edited the url :
 ---
 
 ### Natas 8
-Access the website with the link : http://natas8.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas8
-password : a6bZCNYwdKqN5cGP11ZdtPg0iImQQhAB 
+Access the website with the link : http://natas8.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas8 <br>
+password : a6bZCNYwdKqN5cGP11ZdtPg0iImQQhAB  <br>
 
 This time we have again a form where we have to insert a secret code, let's click on the "view source code" link to understeand what is going on behind the scene,
 
@@ -250,10 +250,10 @@ php script.php
 ---
 
 ### Natas 9
-Access the website with the link : http://natas9.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas9
-password : Sda6t0vkOPkM8YeOZkAGVhFoaplvlJFd
+Access the website with the link : http://natas9.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas9 <br>
+password : Sda6t0vkOPkM8YeOZkAGVhFoaplvlJFd <br>
 
 There is again a form, where we have to insert a word/string to search, checking the code we can see that it will search for that value with `grep` inside a document called "dictionary.txt".
 
@@ -281,10 +281,10 @@ Note: there are other combinations of words-caracthers you can use, like `;` and
 ---
 
 ### Natas 10
-Access the website with the link : http://natas10.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas10
-password : D44EcsFkLxPIkAAKLosx8z3hxX1Z4MCE
+Access the website with the link : http://natas10.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas10  <br>
+password : D44EcsFkLxPIkAAKLosx8z3hxX1Z4MCE <br>
 
 We can see again a form where we can search for words, but this time it tells us that a filter for certain characters has been added for security reasons.
 
@@ -307,10 +307,10 @@ The first line displayed will show us the password:
 ---
 
 ### Natas 11
-Access the website with the link : http://natas11.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas11
-password : 1KFqoJXi6hRaPluAmk8ESDW4fSysRoIg
+Access the website with the link : http://natas11.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas11  <br>
+password : 1KFqoJXi6hRaPluAmk8ESDW4fSysRoIg  <br>
 
 In this level we can see another form, where we can insert a color hex value to change the background, there is also a sentence that informs us that cookies are protected with XOR encryption.
 
@@ -427,10 +427,10 @@ Now that we have our new cookie go back into your browser in the natas11 page, o
 ---
 
 ### Natas 12
-Access the website with the link : http://natas12.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas12
-password : YWqo0pjpcXzSIl5NMAVxg12QxeC1w9QG
+Access the website with the link : http://natas12.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas12  <br>
+password : YWqo0pjpcXzSIl5NMAVxg12QxeC1w9QG  <br>
 
 When opening the website we can notice that there is a form where we can chose and than upload a file.
 We can click on "View source code" to better understeand what is happening behind this form.
@@ -470,10 +470,10 @@ Press `ENTER` and the password will be displayed on the screen : lW3jYRI02ZKDBb8
 ---
 
 ### Natas 13
-Access the website with the link : http://natas13.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas13
-password : lW3jYRI02ZKDBb8VtQBU1f6eDRo6WEj9
+Access the website with the link : http://natas13.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas13  <br>
+password : lW3jYRI02ZKDBb8VtQBU1f6eDRo6WEj9 <br>
 
 Once again we have a web-form where we can submit a file, this time it tells us that it is only accepting JPEG files for security reasons.
 The file size also has to be of max 1KB.
@@ -525,10 +525,10 @@ And finally we got the password for level 14 : qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP
 ---
 
 ### Natas 14
-Access the website with the link : http://natas14.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas14
-password : qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP
+Access the website with the link : http://natas14.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas14  <br>
+password : qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP <br>
 
 After logging in we notice that there is another login where we have to insert some username and password.
 
@@ -552,10 +552,10 @@ Insert that in both the field, press Login, and we have the password for natas15
 ---
 
 ### Natas 15
-Access the website with the link : http://natas15.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas15
-password : TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB
+Access the website with the link : http://natas15.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas15  <br>
+password : TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB  <br>
 
 Continuing with the exploitation of web forms, this time we have to submit an username and than check if that is present inside the database.
 
@@ -674,10 +674,10 @@ I encourage you to practice and create your own best version of this ;)
 ---
 
 ### Natas 16
-Access the website with the link : http://natas16.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas16
-password : TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V
+Access the website with the link : http://natas16.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas16  <br>
+password : TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V  <br>
 
 Another web form to exploit yaii, looking at the source code we can notice that this time there is a filter that will block some chars: 
 ```
@@ -772,10 +772,10 @@ After a while here we have it : XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd
 ---
 
 ### Natas 17
-Access the website with the link : http://natas17.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas17
-password : XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd
+Access the website with the link : http://natas17.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas17  <br>
+password : XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd <br>
 
 We are presented again a web form where we have to insert an username, checking the code it  is very similar to the one of level 15, still searching for a match in a mySQL database.
 There is one difference tho, the response in case we write a correct or wrong username is commented out, this means that we get no written feedback whether we are inserting the right data or not.
@@ -879,10 +879,10 @@ Also this method will take a bit of time, so take a little break and wait, when 
 ---
 
 ### Natas 18
-Access the website with the link : http://natas18.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas18
-password : 8NEDUUxg8kFgPV84uLwvZkGn6okJQ6aq
+Access the website with the link : http://natas18.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas18  <br>
+password : 8NEDUUxg8kFgPV84uLwvZkGn6okJQ6aq  <br>
 
 Continuing with web-forms, in this level we have a login screen where we have to log as admin to receive the password for natas19.
 
@@ -926,10 +926,10 @@ And in a couple of minutes we have the password : 8LMJEhKFbMKIL2mxQKjv0aEDdk7zpT
 ---
 
 ### Natas 19
-Access the website with the link : http://natas19.natas.labs.overthewire.org . 
-Insert the credentials : 
-username : natas19
-password : 8LMJEhKFbMKIL2mxQKjv0aEDdk7zpT0s
+Access the website with the link : http://natas19.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas19  <br>
+password : 8LMJEhKFbMKIL2mxQKjv0aEDdk7zpT0s <br>
 
 When we log into the level we get a message saying "This page uses mostly the same code as the previous level, but session IDs are no longer sequential..." 
 Another difference is the absence of the link to view the source code of the script behind the form.
@@ -978,4 +978,81 @@ The right combination was : 281-admin --> 3238312d61646d696e
 <br/>
 
 ---
+### Natas 20
+Access the website with the link : http://natas20.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas20  <br>
+password : guVaZ3ET35LbgbFMoaN5tFcYT1jEP7UH <br>
+
+Once we log into the level we can see again another webform, but this time we are given a warning message telling us:
+"*session_start(): Failed to read session data: user (path: /var/lib/php/sessions) in **/var/www/natas/natas20/index.php** on line **106***  
+*You are logged in as a regular user. Login as an admin to retrieve credentials for natas21.*"
+
+We can start analyzing the source code to better understand what is happening inside the PHP code and why a warning is given.
+The PHP script is taking care about the session handling, it check if we are logged in as admin it will print us the credentials for level 21 or display a message if we are logged as normal users.
+
+More specifically the `print_credentials()` function checks if the user is admin or not by checking the `admin` key in the `$_SESSION` array.
+
+The vulnerable part of the code is the `mywrite()` function, in fact we can see that there debugs info can be seen and they contain the credentials. Also data is stored line by line, we can notice the new line symbol at the end.
+
+Knowing this we can think about abusing the debug logs to print the credentials, but first we want to inject the "admin" keyword to make happy the function that checks for it inside the `$_SESSION` variable, also its value has to be 1.
+
+To gain more info we can use Burp Suite proxy to capture the request, for the first time we can put any word in the form, once you have the capture send it to repeater.
+Here we can play around and quickly modify the request and see the response.
+
+In order to receive the debug messages we have to append `?debug` at the end of the  URL (line 1 in Burp request, after `index.html`). 
+
+We have to inject this string: `\nadmin 1`, but since it only accepts URL encoded input we need to convert it -->`%0Aadmin%201`.
+Note that if you just paste the string inside an online converter it will output a different encoded string as it view `\n` as characters while we are using it as the new line sign -> `%0A` 
+
+Now just hit send, and in the HTTP response we get the password: 89OWrTkGmiLZLv12JY4tLj2c4FW0xn56
+<br/>
+
+---
+### Natas 21
+Access the website with the link : http://natas21.natas.labs.overthewire.org .  <br>
+Insert the credentials :  <br>
+username : natas21  <br>
+password : 89OWrTkGmiLZLv12JY4tLj2c4FW0xn56 <br>
+
+After logging into the level i see a message saying that: "this website is co-located with [http://natas21-experimenter.natas.labs.overthewire.org](http://natas21-experimenter.natas.labs.overthewire.org/)", click on the link and another webpage appears.
+In this new page there is a a little css experiment, we can change some values to change the look of the line with the "Hello world!" in it.
+
+We can go and check the source code, again a PHP script, this time it takes care of the "little css experiment".
+Looks like we can use again the  `?debug` at the end to have debug information after we try to submit some changes.
+
+We can also look at the first page we landed on when we have opened the challenge, here the source code show us that there is the same function to check and display the credentials as last level, containing this if statement:
+```php
+if($_SESSION and array_key_exists("admin", $_SESSION) and $_SESSION["admin"] == 1)
+```
+
+Since the 2 sites are connected by idea is that we have to inject the same values as last time, but using the second site for that, than reloading the page on the first site should get us done.
+
+Now we have to find out how exactly we can inject "admin" and set its value to "1" in the css example.
+
+**Method 1**
+Time to Burp Suite again, so capture both the request of the first and the affiliated pages, send them both to repeater.
+In the request modify the URL `index.php?debug` in order to see the debug info and know if our attempts are succesful.
+
+Now we can try to inject the wanted pair "admin=1" in the form but this will only set it as a value of other fields, we either need to escape it or try if adding another field is permitted.
+Luckily enough there are not proper controls and we can just add a new filed as we like and we can also set its value.
+We can do it this way:
+```
+align=center&fontsize=100&%25bgcolor=yellow&admin=1&submit=Update
+```
+
+Now admin value is set to 1 and stored in `$_SESSION`, we know the other site read whats inside of it and check for the match, in order to allow it we also have to use the same `PHPSESSID`, so copy the cookie value from the successful request (the one of page 2) and substitute it into the request of page 1.
+
+Now just press send and here we have it: 91awVM9oDiUGm33JdzM7RVLBS8bz9n0s
+
+**Method2**
+Another way to reach the same result but only using your browser is by:
+- inspecting the css experiment form, add another element called "admin" and set its value to 1
+- `<input name="admin" value="1">`
+- then you can submit it, open the dev tools and copy the cookie,
+- now go on the first page of the challenge, and edit the cookie value with the one you have just copied,
+- reload the page and get natas22 credentials 
+<br/>
+
+--
 To be continued...
