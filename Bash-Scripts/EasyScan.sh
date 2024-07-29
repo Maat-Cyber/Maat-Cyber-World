@@ -70,7 +70,7 @@ while [ $INPUT != "quit" ];do
         read MODE 
 
         if [ $MODE -eq 1 ];then
-        sudo nmap -sV -vv $INPUT | pv -l -s $(sudo nmap -sV -vv $INPUT | grep -c 'Nmap scan report for') > /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt
+        sudo nmap -sV -vv $INPUT  | grep -c 'Nmap scan report for' > /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt
         fi
         if [ $MODE -eq 2 ];then
         sudo nmap -sV -vv -p- $INPUT | pv -l -s $(sudo nmap -sV -vv $INPUT | grep -c 'Nmap scan report for') > /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt
