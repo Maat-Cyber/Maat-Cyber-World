@@ -74,8 +74,11 @@ Insert the password we have found in the previous level and let's start.
 ​Than to open is we use the cat command.
 
 ​The final command will look like this:
---> cat "spaces in this filename" 
-​
+
+```bash
+cat "spaces in this filename" 
+```
+
 And we will see the password: aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 
 ​<br/>
@@ -92,16 +95,20 @@ Insert the password we have found in the previous level and let's start.
 This time we see not a file but a folder, to go inside the folder we use the command cd with the folder name.
 ​
 The final command will be:
---> cd inhere 
-
+```bash
+cd inhere 
+```
 Once there we try to use ls to see what's inside but nothing seems to appear, in this situation we have to use it with the flag -la that means list all.
---> ls -la
-​
+
+```bash
+ls -la
+```
 And now we can see there is a file called  .hidden
 
 To open it we can simply use the cat command with this file name.
---> cat .hidden 
-
+```bash
+cat .hidden 
+```
 ​And now we have found the password: 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 
 ​<br/>
@@ -124,15 +131,17 @@ There are various options: open every file, open all files or look for the only 
 ​I will show the option3 as i think the purpose here is to learn how to use the find command.
 
 To do so we will write:
---> find . -type f | xargs file 
-
+```bash
+find . -type f | xargs file 
+```
 ​We will get something like this:  
   
 ​Looking at it we can see that file number 7 is the only one with text inside.
 ​
 We open it with cat as we did in level1
---> cat ./file07
-​
+```bash
+cat ./file07
+```
 And we get the password: lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 
 ​<br/>
@@ -155,14 +164,16 @@ This time we are presented with many different folders and the password is in th
 - not executable
     
 To avoid checking in every folder we can use the find command and specify some more info about the file we want to see.
---> find . -type f -size 1033c |xargs file 
-
+```bash
+find . -type f -size 1033c |xargs file 
+```
 ​This way we looked for: a file, a size of 1033 bytes and that is a text file.
 Quickly we get:  ./maybehere07/.file2: ASCII text, with very long lines (1000)
 
 ​Now is time to open it:
---> cat maybehere07/.file2 
-
+```bash
+cat maybehere07/.file2 
+```
 ​And here we have the password: P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU  
   
 ​<br/>
@@ -183,11 +194,15 @@ We have a nice hint that tells us where is the password located, in a file:
 - 33 bytes in size
 
 Well, guess what we can use find again and put all this inside of it
---> find / -user bandit7 -group bandit6 -type f -size 33c  
+```bash
+find / -user bandit7 -group bandit6 -type f -size 33c  
+```
 
 Now a long list may appear with a lot's of "permission denied" but looking closely we will find what we need is here: /var/lib/dpkg/info/bandit7.password
 Bingo! now we just need to open it with cat command
---> cat /var/lib/dpkg/info/bandit7.password 
+```bash
+cat /var/lib/dpkg/info/bandit7.password 
+```
 
 And the password is : z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S  
 
@@ -223,7 +238,9 @@ Insert the password we have found in the previous level and let's start.
 We find a file called data.txt, if we open it with cat we can see a very long lis of passwords but only one is the correct one and, as the hint says, is the one that recurr only once.
 
 To achieve this we have to use 2 new commands, sort and uniq:
---> sort data.txt | uniq -u | cat
+```bash
+sort data.txt | uniq -u | cat
+```
 
 sort, as we can immagine will sort all entries and uniq -u will delete all the duplicate lines that occurs consecutively, in this way we will be left with the only line that's unique.
 
