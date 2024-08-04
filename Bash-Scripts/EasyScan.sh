@@ -70,10 +70,10 @@ while [ $INPUT != "quit" ];do
         read MODE 
 
         if [ $MODE -eq 1 ];then
-        sudo nmap -sV -vv $INPUT  | grep -c 'Nmap scan report for' > /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt
+        sudo nmap -sV -vv $INPUT  | grep -A 20 'Nmap scan report for' > /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt
         fi
         if [ $MODE -eq 2 ];then
-        sudo nmap -sV -vv -p- $INPUT | pv -l -s $(sudo nmap -sV -vv $INPUT | grep -c 'Nmap scan report for') > /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt
+        sudo nmap -sV -vv -p- $INPUT | grep -A 20 'Nmap scan report for') > /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt
         fi
 
         EXTRACT_PORTS=$(cat /home/kali/Documents/Scans/nmap/nmap_scan_$INPUT.txt | grep -E 'open  (http|ssl/http)')
