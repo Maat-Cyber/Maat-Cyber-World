@@ -122,7 +122,7 @@ while [ $INPUT != "quit" ];do
         fi
 
         # Print the lines between the two found lines, excluding the lines starting with "SF:"
-        sed -n "$((port_line+1)),$((sf_line-1))p" "$input_file" | grep -v "^SF:" >> /home/kali/Documents/Scans/Reports/report_$INPUT.txt 
+        sed -n "$((port_line+1)),$((service_info_line))p" "$input_file" | grep -v "^SF:" >> /home/kali/Documents/Scans/Reports/report_$INPUT.txt 
 
 
         # Addinf the gobuster scans
