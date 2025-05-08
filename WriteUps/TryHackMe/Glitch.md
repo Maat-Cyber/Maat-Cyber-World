@@ -140,7 +140,7 @@ cat /home/user/user.txt
 <br/>
 
 ### Privilege Escalation
-Now before proceding i decided to upgrade the shell to a fully interactive tty (follow my guide [here](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/f3e04826cef5715618650899d8bfee3d241b615f/Tips-%26-Resources/Reverse_Shell-Upgrade.md) if you don't know how to do it).
+Now before proceding i decided to upgrade the shell to a fully interactive tty (follow my guide [here](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/Tips-%26-Resources/Reverse_Shell-Upgrade.md) if you don't know how to do it).
 
 In `.firfox`
 release
