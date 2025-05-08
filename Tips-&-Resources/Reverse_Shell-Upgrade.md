@@ -82,6 +82,18 @@ NOTE: I have encountered some problems using the zsh shell as my default, so her
 
 <br/>
 
+### Script
+A command for logging that can be turn into a tool to upgrade a shell! <br>
+Sometimes Python is not available on the target so we might find this one useful in Linux environments.
+
+Basically repeat the same passages as for the previous one with Python but instead of the first line we use this one:
+
+```bash
+/usr/bin/script -qc /bin/bash /dev/null
+```
+
+<br/>
+
 ### Socat
 Another way is to use *Socat*, a kind of newer and more powerful version of *netcat*, it s quite simple to do, the only catch is that most of the times it is not installed on the target systems, meaning we won't be able to use it.
 
