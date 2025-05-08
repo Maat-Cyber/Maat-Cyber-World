@@ -240,3 +240,12 @@ When the shell spawn, get the root flag:
 cat root.txt
 ```
 --> REDACTED
+
+<br>
+<br>
+
+Congratulations you have successfully exploited the web application via Local File Inclusion and gained access to the system to escalate your privileges and get the root flag.
+
+I hope you had fun doing the challenge and following along.
+
+Catch you in the next CTF 😃
