@@ -99,6 +99,7 @@ Maat-Cyber-World/
 ├── Bash-Scripts/
 │   ├── EasyScan.sh              # Automated multi-tool recon scanner
 │   └── Pin_Codes_Generator.sh   # PIN code wordlist generator
+│   └── Reverse_Shell-Generator-CLI.sh   # A bash cli for quick reverse shell gen
 ├── Python-Scripts/
 │   ├── EnumerateUsers_lookup.py # User enumeration + brute-force (THM Lookup)
 │   └── base64_to_img.py         # Base64 string to image file converter
