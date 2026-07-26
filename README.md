@@ -39,16 +39,25 @@
   - [🛠️ Scripts \& Tools](#️-scripts--tools)
     - [EasyScan.sh](#easyscansh)
     - [Pin Codes Generator](#pin-codes-generator)
+    - [Reverse Shell Generator CLI](#reverse-shell-generator-cli)
     - [EnumerateUsers (Lookup)](#enumerateusers-lookup)
     - [Base64 to Image](#base64-to-image)
   - [📚 Tips \& Resources](#-tips--resources)
     - [Reverse Shell Upgrade](#reverse-shell-upgrade)
+    - [Linux Privilege Escalation Checklist](#linux-privilege-escalation-checklist)
+    - [Windows Privilege Escalation Checklist](#windows-privilege-escalation-checklist)
+    - [Web Application Exploitation Checklist](#web-application-exploitation-checklist)
+  - [🔒 Privacy Guides](#-privacy-guides)
+    - [Private Browsers Choice Guide](#private-browsers-choice-guide)
+    - [Private Search Engines Guide](#private-search-engines-guide)
+    - [Password Managers Guide](#password-managers-guide)
   - [🚀 Getting Started](#-getting-started)
     - [Browsing Writeups](#browsing-writeups)
     - [Using the Scripts](#using-the-scripts)
   - [✅ Prerequisites](#-prerequisites)
   - [🤝 Contributing](#-contributing)
   - [❓ FAQ](#-faq)
+  - [📜 Legal \& Licensing](#-legal--licensing)
   - [🔗 Connect](#-connect)
 
 <br/>
@@ -68,6 +77,7 @@ This repository contains:
 | 📝 **Writeups** | Step-by-step walkthroughs for 100+ CTF rooms and challenges |
 | 🛠️ **Scripts** | Hand-crafted Bash and Python tools to automate common CTF tasks |
 | 📚 **Guides** | Practical reference material for techniques like reverse shell upgrades |
+| 🔒 **Privacy** | In-depth guides on private browsers, search engines, and password managers |
 
 Every writeup follows a consistent philosophy: **guide you to the solution without handing you the flag**. You will learn the methodology, the tools, and the reasoning, but the final answer is yours to discover on your own machine.
 
@@ -86,6 +96,7 @@ Every writeup follows a consistent philosophy: **guide you to the solution witho
 | **Intermediate Players** | Multi-part challenge series (Boogeyman, The Game, Valentine-2026) that build progressively harder skills |
 | **Script Collectors** | Ready-to-use recon and utility scripts you can drop into your own CTF toolkit |
 | **Self-Learners** | Tips & Resources section with technique references you can revisit anytime |
+| **Privacy Advocates** | Practical guides to reclaim your digital privacy - browsers, search engines, password managers |
 
 <br/>
 <br/>
@@ -95,18 +106,27 @@ Every writeup follows a consistent philosophy: **guide you to the solution witho
 ## 📂 Repository Structure
 
 ```
-Maat-Cyber-World/
+aat-Cyber-World/
 ├── Bash-Scripts/
 │   ├── EasyScan.sh              # Automated multi-tool recon scanner
-│   └── Pin_Codes_Generator.sh   # PIN code wordlist generator
+│   ├── Pin_Codes_Generator.sh   # PIN code wordlist generator
 │   └── Reverse_Shell-Generator-CLI.sh   # A bash cli for quick reverse shell gen
 ├── Python-Scripts/
 │   ├── EnumerateUsers_lookup.py # User enumeration + brute-force (THM Lookup)
 │   └── base64_to_img.py         # Base64 string to image file converter
+├── Privacy-Guides/
+│   ├── Private-Browsers-Choice-Guide.md       # Guide: choosing a privacy-respecting browser
+│   ├── Private-Search_Engines-Guide.md        # Guide: private search engines & anti-tracking
+│   └── Password_Managers-Guide.md             # Guide: password managers comparison & setup
 ├── Tips-&-Resources/
-│   └── Reverse_Shell-Upgrade.md # Guide: upgrading reverse shells to full TTY
+│   ├── Reverse_Shell-Upgrade.md               # Guide: upgrading reverse shells to full TTY
+│   ├── Reverse_Shell-Generator-CLI.md         # Documentation for the reverse shell CLI tool
+│   ├── Linux-Privilege-Escalation-Checklist.md   # Checklist: Linux privesc methodology
+│   ├── Windows-Privilege-Escalation-Checklist.md # Checklist: Windows privesc methodology
+│   └── Web_Apps-Exploitation-Checklist.md        # Checklist: web app exploitation methodology
 ├── WriteUps/
-│   ├── TryHackMe/               # 80+ individual walkthroughs + multi-part series
+│   ├── README.md                # Writeups index & beginner path
+│   ├── TryHackMe/               # 86 individual walkthroughs + multi-part series
 │   │   ├── 3-million-special/   # THM 3M subscriber event (3 challenges)
 │   │   ├── Boogeyman/           # 3-part series
 │   │   ├── The-Game/            # 2 versions
@@ -114,10 +134,18 @@ Maat-Cyber-World/
 │   │   └── *.md                 # Individual room walkthroughs
 │   ├── HackTheBox/              # 8 machine walkthroughs
 │   └── OverTheWire/             # 3 wargame walkthroughs (Bandit, Leviathan, Natas)
+├── About-Me.md                  # Personal introduction & project philosophy
+├── LICENSE.md                   # Main license (content + code overview)
+├── LICENSE-CONTENT.md           # CC BY-NC-ND 4.0 for written content
+├── LICENSE-CODE.md              # Maat Personal-Use Code License v1.0
+├── NOTICE.md                    # Copyright & usage information
+├── TRADEMARK.md                 # Trademark & anti-impersonation policy
+├── Privacy-&-Cookies-Policy.md  # Privacy & cookies policy
 └── README.md
 
 ```
-**Language breakdown:** Shell 79.7% · Python 20.3%
+
+**Language breakdown:** Shell 96.3% · Python 3.7%
 
 <br/>
 <br/>
@@ -310,6 +338,32 @@ Generates PIN code wordlists for brute-force challenges involving numeric authen
 chmod +x Bash-Scripts/Pin_Codes_Generator.sh
 ./Bash-Scripts/Pin_Codes_Generator.sh
  ```
+<br/>
+
+---
+
+### Reverse Shell Generator CLI
+
+**Path:** `Bash-Scripts/Reverse_Shell-Generator-CLI.sh`
+
+An interactive CLI tool that generates reverse shell payloads across **15 categories** and **90+ variants**. Covers every common language and technique used in CTFs and pentests.
+
+| Feature | Details |
+|---------|---------|
+| **Categories** | Bash, Netcat, Python, Perl, PHP, Ruby, PowerShell, Node.js, Java/Groovy, Compiled (C/C#/Go/Rust/Dart), Other (Lua/Awk/Telnet/Zsh/Socat/OpenSSL), Encoded variants, MSFVenom, HoaxShell, Listener commands |
+| **Workflow** | Interactive menu → Select category → Copy payload → Listener reminder |
+| **Customization** | Prompts for LHOST and LPORT; auto-generates encoded variants (Base64, URL, Hex, PS-Base64) |
+| **Extras** | Built-in listener command reference, shell upgrade reminder link |
+
+**Quick start:**
+
+```bash
+chmod +x Bash-Scripts/Reverse_Shell-Generator-CLI.sh
+./Bash-Scripts/Reverse_Shell-Generator-CLI.sh
+```
+
+> 📖 **Documentation:** See `Tips-&-Resources/Reverse_Shell-Generator-CLI.md` for full usage details and payload reference.
+
 
 <br/>
 
@@ -386,6 +440,139 @@ Includes troubleshooting tips for zsh users and `rlwrap` alternatives.
 [**→ Read the full guide**](Tips-&-Resources/Reverse_Shell-Upgrade.md)
 
 <br/>
+
+### Linux Privilege Escalation Checklist
+
+**Path:** `Tips-&-Resources/Linux-Privilege-Escalation-Checklist.md`
+
+A structured, phase-by-phase checklist covering the full Linux privilege escalation methodology:
+
+| Phase | Coverage |
+|-------|----------|
+| 0–1 | Shell stabilization & situational awareness |
+| 2–3 | SUID/SGID binaries & sudo misconfigurations |
+| 4–5 | Cron jobs & PATH hijacking |
+| 6–7 | Writable files/directories & Linux capabilities |
+| 8–10 | Kernel exploits, Docker/container escape, NFS shares |
+| 11–14 | Sensitive files, network pivoting, wildcard attacks, automated tools |
+
+Includes a quick-reference command table for fast lookups during engagements.
+
+*→ [Read the checklist](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/Tips-%26-Resources/Linux-Privilege-Escalation-Checklist.md)*
+
+<br/>
+
+
+### Windows Privilege Escalation Checklist
+
+**Path:** `Tips-&-Resources/Windows-Privilege-Escalation-Checklist.md`
+
+A structured, phase-by-phase checklist covering the full Windows privilege escalation methodology:
+
+| Phase | Coverage |
+|-------|----------|
+| 0–1 | Shell stabilization & situational awareness |
+| 2–3 | Privileges/tokens & unquoted service paths |
+| 4–6 | Weak service/registry permissions & AlwaysInstallElevated |
+| 7–9 | Scheduled tasks, stored credentials, sensitive files |
+| 10–12 | Kernel exploits, token impersonation, UAC bypass |
+| 13–17 | Network pivoting, auto-enum tools, Mimikatz, SMB, RDP |
+
+Includes a quick-reference command table for fast lookups during engagements.
+
+*→ [Read the checklist](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/Tips-%26-Resources/Windows-Privilege-Escalation-Checklist.md)*
+
+<br/>
+
+
+
+### Web Application Exploitation Checklist
+
+**Path:** `Tips-&-Resources/Web_Apps-Exploitation-Checklist.md`
+
+A comprehensive, phase-by-phase checklist for web application exploitation in CTFs and pentests:
+
+| Phase | Coverage |
+|-------|----------|
+| 0–2 | Setup, recon/fingerprinting, content discovery |
+| 3–4 | Input point identification & injection attacks (SQLi/CMDi/SSTI/XXE) |
+| 5–6 | Client-side attacks (XSS/CSRF) & file inclusion/upload |
+| 7–9 | SSRF, authentication/session attacks, IDOR/broken access control |
+| 10–12 | Insecure deserialization, business logic/race conditions, WAF bypass |
+| 13–14 | Post-exploitation/pivoting & automated scanners |
+
+Includes a 20-row quick command table for fast reference.
+
+*→ [Read the checklist](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/Tips-%26-Resources/Web_Apps-Exploitation-Checklist.md)* 
+
+<br/>
+<br/>
+
+---
+
+## 🔒 Privacy Guides
+
+In-depth, research-backed guides to help you take back control of your digital privacy. Each guide explains the problem, what to look for, and provides concrete recommendations with comparison tables.
+
+### Private Browsers Choice Guide
+
+**Path:** `Privacy-Guides/Private-Browsers-Choice-Guide.md`
+
+A comprehensive guide to choosing a privacy-respecting web browser. Covers why default browsers (Chrome, Edge, Safari) fail at privacy, what features to look for (tracker blocking, fingerprint protection, HTTPS-only mode), and provides detailed recommendations:
+
+| Recommendation | Best For |
+|----------------|----------|
+| Brave Browser | Daily driver, "install & go" |
+| LibreWolf | Firefox fans wanting hardening |
+| Tor Browser | Anonymity, censorship circumvention |
+| Mullvad Browser | Anti-fingerprint + VPN pairing |
+
+Includes extension recommendations, VPN pairing advice, and a full comparison table.
+
+*→ [Read the guide](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/Privacy-Guides/Private-Browsers-Choice-Guide.md)*
+
+<br/>
+
+
+### Private Search Engines Guide
+
+**Path:** `Privacy-Guides/Private-Search_Engines-Guide.md`
+
+A deep dive into how search engines track you (cookies, fingerprinting, data selling) and the private alternatives available. Reviews 11 search engines including:
+
+| Recommendation | Best For |
+|----------------|----------|
+| DuckDuckGo | General daily use, bangs |
+| Brave Search | AI answers, independent index |
+| Startpage | Google results + privacy (EU) |
+| SearXNG | Power users, self-hosters |
+
+Covers market share context, technical tracking explanations, and a full comparison table with jurisdiction, open-source status, and AI features.
+
+*→ [Read the guide](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/Privacy-Guides/Private-Search_Engines-Guide.md)*
+
+<br/>
+
+
+### Password Managers Guide
+
+**Path:** `Privacy-Guides/Password_Managers-Guide.md`
+
+A practical guide to choosing and setting up a password manager. Explains why they are safe, what to look for (encryption, audits, zero-knowledge, jurisdiction), and provides detailed recommendations:
+
+| Recommendation | Best For |
+|----------------|----------|
+| Bitwarden | Most users (free, open source, audited) |
+| KeePassXC | Privacy purists (100% local) |
+| Vaultwarden | Self-hosters (Bitwarden-compatible) |
+| 1Password | Polished UX (paid, closed source) |
+
+Includes honourable mentions (Proton Pass, NordPass), a LastPass warning, post-setup checklist, and a full feature comparison table.
+
+*→ [Read the guide](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/Privacy-Guides/Password_Managers-Guide.md)*
+
+
+<br/>
 <br/>
 
 ---
@@ -412,11 +599,14 @@ chmod +x Bash-Scripts/*.sh
 # Run EasyScan (interactive)
 ./Bash-Scripts/EasyScan.sh
 
+# Run Reverse Shell Generator (interactive)
+./Bash-Scripts/Reverse_Shell-Generator-CLI.sh
+
 # Run Python utilities
 pip install pybase64 requests
 python3 Python-Scripts/base64_to_img.py
 python3 Python-Scripts/EnumerateUsers_lookup.py
- ```
+```
 
 <br/>
 <br/>
@@ -518,6 +708,26 @@ Open an issue on GitHub or send an email to the contact address above. Include t
 
 </details>
 
+
+<br/>
+<br/>
+
+---
+
+## 📜 Legal & Licensing
+
+This repository uses a **dual-license model** to protect both written content and code:
+
+| Material | License | File |
+|----------|---------|------|
+| Written content (writeups, guides, tips) | CC BY-NC-ND 4.0 | `LICENSE-CONTENT.md` |
+| Scripts & code (.sh, .py) | Maat Personal-Use Code License v1.0 | `LICENSE-CODE.md` |
+| Overview & terms | Combined license summary | `LICENSE.md` |
+| Branding & identity | Trademark & Anti-Impersonation Policy | `TRADEMARK.md` |
+| Copyright notice | Attribution & usage info | `NOTICE.md` |
+| Privacy policy | Privacy & Cookies Policy | `Privacy-&-Cookies-Policy.md` |
+
+> 📌 **In short:** You may read, learn from, and share the content non-commercially with attribution. You may run and study the scripts for personal/educational/authorized use. You may **not** redistribute, create derivatives, use commercially, or impersonate this project. See individual license files for full terms.
 
 <br/>
 <br/>
