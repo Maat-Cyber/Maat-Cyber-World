@@ -4,13 +4,11 @@
 
 Practical, no-nonsense guides to help you take back control of your digital privacy.
 
-Each guide walks you through **why** a category of tools matters, **what** to look for when choosing one, and **which** options are worth your time — with comparison tables, personal recommendations, and honest trade-offs.
+Each guide walks you through **why** a category of tools matters, **what** to look for when choosing one, and **which** options are worth your time - with comparison tables, personal recommendations, and honest trade-offs.
 
 > _"You don't need to be a journalist, an activist or a criminal to care about privacy. You just need to be a person that values their own security and digital life."_
 
 </div>
-
-<br/>
 
 ---
 
@@ -96,7 +94,7 @@ Makes the case for password managers as the single highest-impact, lowest-effort
 
 | Section | What You'll Find |
 |---------|-----------------|
-| Are They Safe? | Why a vault beats sticky notes — encryption, audits, MFA |
+| Are They Safe? | Why a vault beats sticky notes - encryption, audits, MFA |
 | Things to Look For | Open source, audits, data location, privacy policy, 2FA, portability |
 | Advanced Criteria | Encryption algorithms, key derivation (Argon2id), zero-knowledge, passkeys |
 | Recommendations | 🥇 Bitwarden · 🥈 KeePassXC · 🥈 Vaultwarden · 1Password · Proton Pass · NordPass |
@@ -110,7 +108,7 @@ Makes the case for password managers as the single highest-impact, lowest-effort
 
 ## 🧭 How to Use These Guides
 
-1. **Start with the guide that matches your immediate need** — browser, search engine, or passwords.
+1. **Start with the guide that matches your immediate need** - browser, search engine, or passwords.
 2. **Read the "What to Look For" section first** so you can evaluate options yourself.
 3. **Jump to "My Suggestions"** if you just want a quick pick and move on with your day.
 4. **Use the Comparison Tables** to side-by-side evaluate tools against your personal requirements.
@@ -127,12 +125,12 @@ Makes the case for password managers as the single highest-impact, lowest-effort
 
 These guides follow the same principles as the rest of the repository:
 
-- **Educational, not prescriptive** — learn the _why_, then choose the _what_ that fits you.
-- **Honest trade-offs** — every recommendation lists cons and caveats (ownership concerns, jurisdiction risks, feature gaps).
-- **FOSS-first** — open source and audited tools are preferred, but non-free options are included when they are genuinely strong.
-- **Do your own research** — these are starting points, not gospel. Verify audits, read source code, check current status.
+- **Educational, not prescriptive** - learn the _why_, then choose the _what_ that fits you.
+- **Honest trade-offs** - every recommendation lists cons and caveats (ownership concerns, jurisdiction risks, feature gaps).
+- **FOSS-first** - open source and audited tools are preferred, but non-free options are included when they are genuinely strong.
+- **Do your own research** - these are starting points, not gospel. Verify audits, read source code, check current status.
 
-> _"Trust, but verify."_
+> _"Trust, but verify!"_
 
 <br/>
 <br/>
@@ -164,4 +162,4 @@ No guide here makes you anonymous. Privacy is a **spectrum and a practice**, not
 
 _Last updated: July 2026. The privacy landscape moves fast._
 
-**Stay safe out there. 🔐🏴‍☠️**
+**Stay Safe. 🔐**
