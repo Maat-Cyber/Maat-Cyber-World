@@ -1092,7 +1092,7 @@ def parse_options(data, endian):
     opts = {}
     off = 0
     while off + 4 <= len(data):
-        code, length = struct.unpack(endian + "HH", data, off)
+        code, length = struct.unpack_from(endian + "HH", data, off)
         off += 4
         if code == 0:  # End-of-options sentinel.
             break
