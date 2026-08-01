@@ -1,7 +1,9 @@
 # Packed Light Walkthrough
 
 ## Intro
-Welcome to the Complimentary challenge, here is the link to the [room](https://tryhackme.com/room/hh-packedlight-02e5330c) on TryHackMe.
+Welcome to the Packed Light challenge, here is the link to the [room](https://tryhackme.com/room/hh-packedlight-02e5330c) on TryHackMe.
+
+This is an easy level challenge about netowrk packets investigation and a bit or reversing of an unsafe enccryption.
 
 *"Tiny packets. Odd hours. Suspiciously regular. Someone's smuggling out the data equivalent of a hotel towel every night, folded neatly inside traffic that looks ordinary until you decode it.*
 
@@ -187,3 +189,10 @@ And here we have the flag:
 
 --> REDACTED
 
+<br/>
+<br/>
+
+Congratulations, you have successfully uncovered all the attacker's steps and reversed the encryption to restore the flag.
+
+Hope you had fun following along and completing the challenge.
+Catch you in the next CTF 😃 
