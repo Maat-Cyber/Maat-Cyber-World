@@ -10,10 +10,10 @@ The challenges range from easy to medium, covering a mix of OSINT, web exploitat
 
 ## 🧭 Quick Navigation
 
-- [📋 Index by Category](#index-by-category)
-  - [🌐 Web Exploitation & Cloud](#web-exploitation--cloud)
-  - [🕵️ OSINT & Forensics](#osint--forensics)
-- [🏖️ Event Overview](#event-overview)
+- 📋 Index by Category
+  - 🌐 Web Exploitation & Cloud
+  - 🕵️ OSINT & Forensics
+- 🏖️ Event Overview
 
 ---
 
@@ -27,10 +27,12 @@ The largest category in this event. Covers application logic flaws, cloud miscon
 
 | Writeup | Difficulty | Key Techniques |
 | :--- | :---: | :--- |
-| 🍹 [**Beach Bar**](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/WriteUps/TryHackMe/Hacker-Holidays-2026/Beach-Bar.md) | Easy | Unsafe YAML deserialization, Python reverse shell, systemd plaintext credential leak |
-| 🧖 [**Complimentary**](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/WriteUps/TryHackMe/Hacker-Holidays-2026/Complimentary.md) | Easy | AWS Cognito misconfiguration, overprivileged IAM roles, DynamoDB scan bypass |
-| 🚪 [**Do Not Disturb**](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/WriteUps/TryHackMe/Hacker-Holidays-2026/Do-Not-Disturb.md) | Medium | NoSQL injection bypass, EJS Server-Side Template Injection (SSTI), Node.js V8 Inspector privesc |
-| 🛏️ [**Room 404**](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/WriteUps/TryHackMe/Hacker-Holidays-2026/Room-404.md) | Easy | Exposed `.git` directory, source code disclosure via `git-dumper`, ripgrep |
+| 🍹 **Beach Bar** | Easy | Unsafe YAML deserialization, Python reverse shell, systemd plaintext credential leak |
+| 🧖 **Complimentary** | Easy | AWS Cognito misconfiguration, overprivileged IAM roles, DynamoDB scan bypass |
+| 🚪 **Do Not Disturb** | Medium | NoSQL injection bypass, EJS Server-Side Template Injection (SSTI), Node.js V8 Inspector privesc |
+| 🐚 **The Hollow Shell** | Medium | ZIP SLIP path traversal, arbitrary file overwrite, Python hook execution for RCE |
+| 🛏️ **Room 404** | Easy | Exposed `.git` directory, source code disclosure via `git-dumper`, ripgrep |
+| 🏖️ **Towel on the Sunbed** | Medium | Race condition (TOCTOU) exploitation, Burp Suite parallel requests, Express.js logic flaw bypass |
 
 <a id="osint--forensics"></a>
 ### 🕵️ OSINT & Forensics
@@ -39,8 +41,8 @@ Challenges focused on open-source intelligence gathering and network traffic ana
 
 | Writeup | Difficulty | Key Techniques |
 | :--- | :---: | :--- |
-| 🥐 [**OverHeard at Breakfast**](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/WriteUps/TryHackMe/Hacker-Holidays-2026/OverHeard-at-Breakfast.md) | Easy | OSINT, Gravatar email lookup, Base64 decoding |
-| 🧳 [**Packed Light**](https://github.com/Maat-Cyber/Maat-Cyber-World/blob/main/WriteUps/TryHackMe/Hacker-Holidays-2026/Packed-Light.md) | Easy | PCAP network forensics, Wireshark stream analysis, Custom Python C2, Base64 + XOR decryption |
+| 🥐 **OverHeard at Breakfast** | Easy | OSINT, Gravatar email lookup, Base64 decoding |
+| 🧳 **Packed Light** | Easy | PCAP network forensics, Wireshark stream analysis, Custom Python C2, Base64 + XOR decryption |
 
 ---
 
@@ -49,9 +51,9 @@ Challenges focused on open-source intelligence gathering and network traffic ana
 
 The **Hacker Holidays 2026** series is centered around a single fictional narrative: a stay at the **Byte Lotus Hotel**. Every room tells a different story of poor operational security, rushed deployments, and leaked secrets.
 
-* **The Vibe:** Tropical, relaxed, and full of hidden vulnerabilities. 🌴
-* **The Goal:** Hack your way through the resort, from the beachside jukebox to the poolside cabana management portal. 🎯
-* **The Skills:** A well-rounded mix of cloud security (AWS), web application attacks, cryptography, and Linux privilege escalation. 🛠️
+*   **The Vibe:** Tropical, relaxed, and full of hidden vulnerabilities. 🌴
+*   **The Goal:** Hack your way through the resort, from the beachside jukebox to the poolside cabana management portal. 🎯
+*   **The Skills:** A well-rounded mix of cloud security (AWS), web application attacks, cryptography, and Linux privilege escalation. 🛠️
 
 ---
 
