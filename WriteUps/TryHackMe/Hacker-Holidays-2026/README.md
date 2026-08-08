@@ -31,6 +31,7 @@ The largest category in this event. Covers application logic flaws, cloud miscon
 | 🧖 **Complimentary** | Easy | AWS Cognito misconfiguration, overprivileged IAM roles, DynamoDB scan bypass |
 | 🚪 **Do Not Disturb** | Medium | NoSQL injection bypass, EJS Server-Side Template Injection (SSTI), Node.js V8 Inspector privesc |
 | 🐚 **The Hollow Shell** | Medium | ZIP SLIP path traversal, arbitrary file overwrite, Python hook execution for RCE |
+| 🏊 **Infinity Pool** | Medium | Web command injection, SSH key injection, internal API enumeration, root privilege escalation via Gunicorn command injection |
 | 🛏️ **Room 404** | Easy | Exposed `.git` directory, source code disclosure via `git-dumper`, ripgrep |
 | 🏖️ **Towel on the Sunbed** | Medium | Race condition (TOCTOU) exploitation, Burp Suite parallel requests, Express.js logic flaw bypass |
 
@@ -41,6 +42,7 @@ Challenges focused on open-source intelligence gathering and network traffic ana
 
 | Writeup | Difficulty | Key Techniques |
 | :--- | :---: | :--- |
+| 🌃 **After Hours** | Medium | Windows WMI repository forensics, fileless persistence analysis, UTF-16LE string extraction, Base64 payload decoding |
 | 🥐 **OverHeard at Breakfast** | Easy | OSINT, Gravatar email lookup, Base64 decoding |
 | 🧳 **Packed Light** | Easy | PCAP network forensics, Wireshark stream analysis, Custom Python C2, Base64 + XOR decryption |
 
